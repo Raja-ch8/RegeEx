@@ -1,4 +1,6 @@
 ## **1. Classes de caractères**
+L'expression "Character Classes" en anglais se traduit en français par "Classes de caractères".
+Les classes de caractères en expressions régulières (RegEx) permettent de définir un ensemble de caractères que vous souhaitez faire correspondre dans une chaîne de texte. Elles sont représentées par des crochets [] et peuvent inclure des caractères spécifiques ou des plages de caractères.
 
 ```
 [abc] : Un caractère parmi : a, b ou c.
@@ -11,6 +13,8 @@
 ```
 
 ## **2. Quantificateurs**
+Les "Quantifiers" (ou quantificateurs) en expressions régulières permettent de spécifier combien de fois un élément (caractère, groupe de caractères, etc.) doit apparaître dans la chaîne de texte pour que la correspondance soit valide.
+
 
 ```
 a? : Zéro ou un caractère de 'a'.
@@ -26,6 +30,7 @@ a*+ (quantificateur possessif) : Zéro ou plusieurs caractères de 'a' (ce quant
 ```
 
 ## **3. Séquences métacaractères**
+Les "Meta Sequences" (ou séquences métacaractères) en expressions régulières sont des séquences spéciales qui permettent de représenter des concepts particuliers comme des positions dans le texte, des catégories de caractères ou des correspondances spécifiques. 
 
 ```
 . : N'importe quel caractère.
@@ -68,6 +73,20 @@ a*+ (quantificateur possessif) : Zéro ou plusieurs caractères de 'a' (ce quant
 \cY : Caractère de contrôle Y (comme \cA pour le caractère de contrôle 'A').
 [\b] : Caractère de retour arrière (backspace).
 \ : Fait tout caractère suivant comme littéral (c'est-à-dire qu'il traite ce caractère comme un caractère normal, sans fonction spéciale).
+```
+## **3. Ancres**
+Les "Anchors" (ou ancres) en expressions régulières sont utilisés pour spécifier la position d'un motif dans la chaîne de texte. Contrairement aux autres métacaractères qui correspondent à des caractères spécifiques, les ancres définissent où dans la chaîne le motif doit apparaître.
+
+```
+\G : Début de la correspondance – Cela correspond au début de la correspondance précédente. C'est utile pour les recherches successives dans une chaîne ou pour forcer la recherche à commencer à un endroit spécifique.
+^ : Début de la chaîne – Cela correspond au début de la chaîne de texte.
+$ : Fin de la chaîne – Cela correspond à la fin de la chaîne de texte.
+\A : Début de la chaîne – Cela correspond uniquement au début de la chaîne de texte, sans tenir compte des retours à la ligne dans le cas de chaînes multi-lignes.
+\Z : Fin de la chaîne – Cela correspond à la fin de la chaîne de texte, y compris juste avant un retour à la ligne final.
+\z : Fin absolue de la chaîne – Cela correspond à la fin absolue de la chaîne de texte, sans tenir compte d'éventuels sauts de ligne finaux.
+\b : Limite de mot – Cela correspond à une position entre un caractère de mot (lettre, chiffre, underscore) et un caractère qui n'est pas un mot. Cela marque le début ou la fin d'un mot.
+\B : Non-limite de mot – Cela correspond à une position qui n'est pas une limite de mot.
+Exemple : \Bword\B correspondra à "word" dans "password", mais pas dans "word".
 ```
 
 
